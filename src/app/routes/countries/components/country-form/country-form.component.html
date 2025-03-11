@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="saveAction()" class="form">
+  <mat-form-field>
+    <mat-label>Country name</mat-label>
+    <textarea matInput formControlName="name"></textarea>
+  </mat-form-field>
+  <button mat-flat-button type="submit"  [disabled]="form.invalid" class="button">
+    Save
+  </button>
+</form>
+

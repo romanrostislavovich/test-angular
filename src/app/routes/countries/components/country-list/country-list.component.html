@@ -1,0 +1,27 @@
+<div class="header">
+  <h1 >Country List
+    <span [matBadge]="countryList.length" matBadgeOverlap="false"  matBadgePosition="after"></span>
+  </h1>
+  <button mat-fab (click)="toggleCreateForm()">
+    <mat-icon *ngIf="!countryFormAvailable">add</mat-icon>
+    <mat-icon *ngIf="countryFormAvailable">clear</mat-icon>
+  </button>
+</div>
+
+<app-country-form
+  *ngIf="countryFormAvailable"
+  [formModeType]="formModeType"
+  [country]="editCountry"
+  (saveCountryEmitter)="saveAction($event)"
+></app-country-form>
+<app-country-item
+  *ngFor="let item of countryList"
+  [country]="item"
+  (editCountryEmitter)="editAction($event)"
+  (deleteCountryEmitter)="deleteAction($event)"
+
+></app-country-item>
+
+<ng-container *ngIf="countryList.length === 0">
+  <p>Doesnt have any country</p>
+</ng-container>

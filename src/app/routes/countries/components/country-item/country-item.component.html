@@ -1,0 +1,19 @@
+<mat-card appearance="outlined" class="country">
+  <mat-card-content>
+    <div class="item">
+      <div class="name">
+        {{ country?.name }}
+      </div>
+      <div class="buttons">
+        <button mat-icon-button (click)="editAction()">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteAction()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+
+
+  </mat-card-content>
+</mat-card>

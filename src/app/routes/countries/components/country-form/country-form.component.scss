@@ -1,0 +1,18 @@
+:host {
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 50%;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  .button:disabled {
+    opacity: 0.5;
+    background: red;
+  }
+}
